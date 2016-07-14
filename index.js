@@ -38,6 +38,9 @@ function render(robots) {
     if (robot.CrawlDelay) {
       userAgentArray.push('Crawl-delay: ' + robot.CrawlDelay);
     }
+    if (robot.Sitemap) {
+      userAgentArray.push('Sitemap: ' + robot.Sitemap);
+    }
     return userAgentArray.concat(asArray(robot.Disallow).map(function(disallow) {
       if (Array.isArray(disallow)) {
         return disallow.map(function(line) {
